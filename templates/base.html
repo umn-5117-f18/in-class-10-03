@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %} | 5117 10-01</title>
+</head>
+<body>
+  <div id="menu">
+    {% if session['profile'] is defined %}
+        <a class="pure-button" href="{{ url_for("logout") }}">Logout</a>
+        <a href="{{ url_for("profile") }}">Profile</a>
+    {% else %}
+        <a class="pure-button" href="{{ url_for("login") }}">Log In</a>
+    {% endif %}
+    <a href="{{ url_for("home") }}">Home</a>
+
+
+
+    <form id="search-box" class="pure-form" method="get" action="{{ url_for('search') }}">
+        <fieldset>
+            <input name="query" type="text" placeholder="search...">
+            <button type="submit" class="pure-button pure-button-primary">Search</button>
+        </fieldset>
+    </form>
+
+  </div>
+  <div id="content" style="">{% block content %}{% endblock %}</div>
+</body>
+</html>

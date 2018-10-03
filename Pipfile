@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+gunicorn = "*"
+"psycopg2-binary" = "*"
+python-dotenv = "*"
+python-jose-cryptodome = "*"
+six = "*"
+Flask = "*"
+Flask-Cors = "*"
+request = "*"
+authlib = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
